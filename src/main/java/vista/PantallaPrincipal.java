@@ -246,7 +246,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void btnStandsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStandsActionPerformed
         String textoIngresado = JOptionPane.showInputDialog("Ingrese el ID del cliente del que quiere consultar sus Stands:");
-        if (textoIngresado != null) {
+        //version original
+        /*if (textoIngresado != null) {
             try{
                 Cliente cliente = feria.buscaClientePorId(textoIngresado);
                 VerDatosCliente datosCliente = new VerDatosCliente(cliente);
@@ -254,7 +255,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 datosCliente.setLocationRelativeTo(null);
         } catch(ClienteNoEncontrado e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        }}
+        }}*/
+        
+        
+        //version para prueba!!!!
+        if (textoIngresado != null) {
+                Cliente cliente = new Cliente();
+                VerDatosCliente datosCliente = new VerDatosCliente(cliente);
+                datosCliente.setVisible(true);
+                datosCliente.setLocationRelativeTo(null);
+        }
+        
         
     }//GEN-LAST:event_btnStandsActionPerformed
 
