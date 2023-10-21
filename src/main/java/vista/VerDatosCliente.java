@@ -2,6 +2,7 @@
 package vista;
 import Model.*;
 import Excepciones.*;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -12,7 +13,7 @@ public class VerDatosCliente extends javax.swing.JFrame {
 
     public VerDatosCliente(Cliente cliente) {
         this.cliente=cliente;
-        System.out.println("Datos del clienteee "+cliente.toString());
+        //System.out.println("Datos del clienteee "+cliente.toString());
         initComponents();
     }
 
@@ -277,6 +278,7 @@ public class VerDatosCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPrincipalActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+       System.out.println("ENTRA QQ");
         cargarTabla();
     }//GEN-LAST:event_formWindowOpened
 
@@ -317,14 +319,14 @@ public class VerDatosCliente extends javax.swing.JFrame {
         tablaStands.setModel(modeloTabla);
         
         //traer stands que tiene el cliente
-        
-        List<Stand> listaStands= cliente.getListaStands();
+        System.out.println("ENTRA ACA");
+        ArrayList<Stand> listaStands= cliente.getListaStands();
          System.out.println("tamanio de la lista de stands "+listaStands.size()); 
          
         //setear los datos en la tabla
         if(listaStands!=null){
             for(Stand stand:listaStands){
-                Object objeto[]={stand.getIdStand(),stand.getSuperficie(),stand.getPrecio(),stand.getUnCliente(),stand.getListaAccesorios()};
+                Object[] objeto={stand.getIdStand(),stand.getSuperficie(),stand.getPrecio(),stand.getUnCliente().getDescCliente(),stand.getListaAccesorios()};
                 modeloTabla.addRow(objeto);
             }
         }

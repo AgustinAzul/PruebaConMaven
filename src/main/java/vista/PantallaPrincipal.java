@@ -249,6 +249,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         if (textoIngresado != null) {
             try{
                 Cliente cliente = feria.buscaClientePorId(textoIngresado);
+                System.out.println("ENTRA ACAaaa");
                 VerDatosCliente datosCliente = new VerDatosCliente(cliente);
                 datosCliente.setVisible(true);
                 datosCliente.setLocationRelativeTo(null);
